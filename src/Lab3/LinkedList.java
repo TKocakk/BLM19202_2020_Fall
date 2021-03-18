@@ -61,7 +61,6 @@ public class LinkedList {
             temp=null;
         }
     }
-    
     void remove(int data){
         if(head==null){
             System.out.println("Liste bos, silinmedi");
@@ -77,14 +76,11 @@ public class LinkedList {
             }
             if(temp.nextNode!=null && temp.nextNode.data==data){
                 temp.nextNode=temp.nextNode.nextNode;
-            }
-            
-            
+            }      
         }
     }
     void insertAfter(int search, int data){
         Node temp=head;
-        
         while(temp!=null && temp.data!=search){
             temp=temp.nextNode;
         }
