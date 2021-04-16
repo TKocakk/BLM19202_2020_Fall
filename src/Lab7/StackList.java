@@ -47,21 +47,35 @@ public class StackList<T> {
     void print(){
         Node <T> temp=head;
         while(temp!=null){
-            System.out.println(temp.data);
+            System.out.print(temp.data +" ->");
             temp=temp.next;
         }
     }
+    static StackList reverseStack(StackList stack){
+        StackList reversed=new StackList();
+        while(!stack.isEmpty()){
+            reversed.push(stack.pop());
+        }
+        return reversed;
+    }
     public static void main(String[] args) {
-        StackList<Integer> stack=new StackList();
-        stack.push(5);
-        stack.push(78);
-        stack.push(23);
-        stack.print();
-        System.out.println("---------------------------");
-        System.out.println("Pop edilen eleman= "+ stack.pop());
-        stack.print();
-        System.out.println("Stack size= "+ stack.size());
-        System.out.println("Peek: "+stack.peek());
-        stack.print();
+        StackList <String> s=new StackList();
+        s.push("masa");
+        s.push("sıra");
+        s.push("koltuk");
+        s.push("sandalye");
+        s.push("telefon");
+        s.push("sehpa");
+        s.push("yastık");
+        s.push("yatak");
+        s.print();
+        System.out.println("");
+        System.out.println("Reversed: ");
+        StackList reverse=reverseStack(s);
+        reverse.print();
+    }
+
+    private boolean isEmpty() {
+        return head==null;
     }
 }
